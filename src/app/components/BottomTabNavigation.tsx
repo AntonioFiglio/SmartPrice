@@ -1,14 +1,14 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HomeIcon, UserIcon, SettingsIcon } from 'lucide-react-native';
+import { HomeIcon, LibraryIcon, SettingsIcon } from 'lucide-react-native';
 import { HomeScreen } from '../screens/home/HomeScreen';
 import { SettingsScreen } from '../screens/settings/SettingsScreen';
-import { ProfileScreen } from '../screens/profile/ProfileScreen';
+import { ProductsScreen } from '@/app/screens/products/ProductsScreen';
 import { useTheme } from '../contexts/ThemeContext';
 
 type BottomTabParamList = {
   Home: undefined;
-  Profile: undefined;
+  Products: undefined;
   Settings: { 
     bottomMenuEnabled?: boolean; 
     onBottomMenuToggle?: (value: boolean) => void;
@@ -35,8 +35,8 @@ export function BottomTabNavigation({
           switch (route.name) {
             case 'Home':
               return <HomeIcon color={color} size={size} />;
-            case 'Profile':
-              return <UserIcon color={color} size={size} />;
+            case 'Products':
+              return <LibraryIcon color={color} size={size} />;
             case 'Settings':
               return <SettingsIcon color={color} size={size} />;
             default:
@@ -72,10 +72,10 @@ export function BottomTabNavigation({
         }} 
       />
       <Tab.Screen 
-        name="Profile" 
-        component={ProfileScreen} 
+        name="Products"
+        component={ProductsScreen}
         options={{ 
-          title: 'Profile',
+          title: 'Produtos',
           headerShown: false 
         }} 
       />
@@ -87,7 +87,7 @@ export function BottomTabNavigation({
           onBottomMenuToggle 
         }}
         options={{ 
-          title: 'Settings',
+          title: 'Configurações',
           headerShown: false,
         }} 
       />

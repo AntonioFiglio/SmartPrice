@@ -40,7 +40,7 @@ const ThemeContext = createContext<ThemeContextType>({
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const colorScheme = useColorScheme();
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
-  const [accentColor, setAccentColor] = useState<string>(ACCENT_COLORS.BLUE);
+  const [accentColor, setAccentColor] = useState<string>(ACCENT_COLORS.ORANGE);
   const [customColors, setCustomColors] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
